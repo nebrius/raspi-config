@@ -1,0 +1,17 @@
+[Unit]
+Requires=systemd-networkd.socket
+After=systemd-networkd.socket
+
+[Service]
+ExecStartPre=/lib/systemd/systemd-networkd-wait-online
+ExecStart=/usr/bin/node /usr/local/raspi-io-config/server/dist/index.js
+Restart=always
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=raspi-io-config
+Environment=NODE_ENV=production
+User=root
+Group=root
+
+[Install]
+WantedBy=multi-user.target
