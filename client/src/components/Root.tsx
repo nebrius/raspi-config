@@ -1,3 +1,4 @@
+/*
 MIT License
 
 Copyright (c) Bryan Hughes <bryan@nebri.us>
@@ -19,3 +20,25 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+*/
+
+import * as React from 'react';
+
+interface IRootState {
+  selectedTab: number;
+}
+
+export class Root extends React.Component<{}, IRootState> {
+
+  public state: IRootState = {
+    selectedTab: 0
+  };
+
+  public render() {
+    return (
+      <div className="root-container">
+        Raspi Config tool
+      </div>
+    );
+  }
+}

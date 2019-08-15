@@ -1,3 +1,4 @@
+/*
 MIT License
 
 Copyright (c) Bryan Hughes <bryan@nebri.us>
@@ -19,3 +20,28 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+*/
+
+import { join } from 'path';
+import * as Fastify from 'fastify';
+import * as fastifyStatic from 'fastify-static';
+
+const PORT = 8080;
+
+const fastify = Fastify({
+  logger: true
+});
+
+fastify.register(fastifyStatic, {
+  root: join(__dirname, '..', '..', 'public')
+});
+
+(async () => {
+  try {
+    await fastify.listen(PORT);
+  } catch (err) {
+    fastify.log.error(err);
+    process.exit(1);
+  }
+  console.log('Server running');
+})();

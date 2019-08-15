@@ -1,0 +1,39 @@
+{
+  "name": "raspi-config",
+  "version": "1.0.0",
+  "description": "A tool for configuring a Raspberry Pi for Johnny-Five",
+  "main": "dist/index.js",
+  "scripts": {
+    "lint": "tslint 'src/**/*.ts' 'src/**/*.tsx'",
+    "prebuild": "npm run lint",
+    "build:css": "",
+    "build:ts": "webpack",
+    "build": "npm run build:ts && npm run build:css",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nebrius/raspi-config.git"
+  },
+  "author": "Bryan Hughes <bryan@nebri.us>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nebrius/raspi-config/issues"
+  },
+  "homepage": "https://github.com/nebrius/raspi-config#readme",
+  "devDependencies": {
+    "@types/react": "^16.9.1",
+    "@types/react-dom": "^16.8.5",
+    "@types/react-redux": "^7.1.1",
+    "ts-loader": "^6.0.4",
+    "tslint": "^5.18.0",
+    "typescript": "^3.5.3",
+    "webpack": "^4.39.2",
+    "webpack-cli": "^3.3.6"
+  },
+  "dependencies": {
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "react-redux": "^7.1.0"
+  }
+}

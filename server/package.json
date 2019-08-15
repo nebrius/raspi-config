@@ -1,0 +1,31 @@
+{
+  "name": "raspi-config",
+  "version": "1.0.0",
+  "description": "A tool for configuring a Raspberry Pi for Johnny-Five",
+  "main": "dist/index.js",
+  "scripts": {
+    "prebuild": "tslint 'src/**/*.ts'",
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nebrius/raspi-config.git"
+  },
+  "author": "Bryan Hughes <bryan@nebri.us>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nebrius/raspi-config/issues"
+  },
+  "homepage": "https://github.com/nebrius/raspi-config#readme",
+  "devDependencies": {
+    "@types/node": "^12.7.2",
+    "tslint": "^5.18.0",
+    "typescript": "^3.5.3"
+  },
+  "dependencies": {
+    "fastify": "^2.7.1",
+    "fastify-static": "^2.5.0"
+  }
+}

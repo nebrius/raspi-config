@@ -1,3 +1,4 @@
+/*
 MIT License
 
 Copyright (c) Bryan Hughes <bryan@nebri.us>
@@ -19,3 +20,25 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+*/
+
+export enum ActionType {
+  StateFetchSucceeded
+}
+
+export interface IAction {
+  type: ActionType;
+}
+
+// State Actions
+
+export interface IStateFetchSucceededAction extends IAction {
+  aquariumState: number;
+}
+
+export function stateFetchSucceeded(aquariumState: number): IStateFetchSucceededAction {
+  return {
+    type: ActionType.StateFetchSucceeded,
+    aquariumState
+  };
+}

@@ -1,3 +1,4 @@
+/*
 MIT License
 
 Copyright (c) Bryan Hughes <bryan@nebri.us>
@@ -19,3 +20,19 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+*/
+
+import { combineReducers } from 'redux';
+// import { aquariumStateReducer } from './aquariumStateReducer';
+// import { aquariumConfigReducer } from './aquariumConfigReducer';
+// import { aquariumTemperatureReducer } from './aquariumTemperatureReducer';
+// import { aquariumTestingReducer } from './aquariumTestingReducer';
+// import { aquariumCleaningReducer } from './aquariumCleaningReducer';
+
+export const reducers = combineReducers({
+  // aquariumState: aquariumStateReducer,
+  // aquariumConfig: aquariumConfigReducer,
+  // aquariumTemperature: aquariumTemperatureReducer,
+  // aquariumTesting: aquariumTestingReducer,
+  // aquariumCleaning: aquariumCleaningReducer
+});
