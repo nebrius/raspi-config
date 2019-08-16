@@ -23,22 +23,21 @@ SOFTWARE.
 */
 
 import * as React from 'react';
+import { Header } from './Header';
 
-interface IRootState {
-  selectedTab: number;
+export interface IRootProps {
+  needsReboot: boolean;
 }
 
-export class Root extends React.Component<{}, IRootState> {
-
-  public state: IRootState = {
-    selectedTab: 0
-  };
-
-  public render() {
-    return (
-      <div className="root-container">
-        Raspi Config tool
-      </div>
-    );
-  }
+export function Root(props: IRootProps): JSX.Element {
+  return (
+    <div className="root-container">
+      <Header />
+      {props.needsReboot && (
+        <div className="alert alert-danger" role="alert">
+          You're Raspberry Pi must be rebooted before changes will take effect
+        </div>
+      )}
+    </div>
+  );
 }

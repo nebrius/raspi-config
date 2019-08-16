@@ -15,34 +15,18 @@ You should have received a copy of the GNU General Public License
 along with Aquarium Control.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-module.exports = {
-  entry: './src/app.tsx',
-  output: {
-    filename: 'bundle.js',
-    path: `${__dirname}/../public`
-  },
+import { Reducer } from 'redux';
+import { ISystemState } from '../types';
+import { IAction } from '../actions/actions';
+import { reduce } from 'conditional-reduce';
 
-  mode: "development",
-
-  // Enable sourcemaps for debugging webpack's output.
-  devtool: 'source-map',
-
-  resolve: {
-    // Add '.ts' and '.tsx' as resolvable extensions.
-    extensions: [ '.ts', '.tsx', '.js', '.json' ]
-  },
-
-  module: {
-    rules: [
-      {
-        test: /\.tsx?$/,
-        use: 'ts-loader',
-        exclude: /node_modules/
-      },
-      {
-        test: /\.css$/,
-        use: [ 'style-loader', 'css-loader' ]
-      }
-    ]
+export const systemStateReducer: Reducer<ISystemState> = (state: ISystemState | undefined, action: IAction) => {
+  if (!state) {
+    state = {
+      needsReboot: true
+    };
   }
+  return reduce<ISystemState>(action.type, {
+
+  }, () => state as ISystemState); // I don't know why TypeScript doesn't infer state is no longer undefined
 };

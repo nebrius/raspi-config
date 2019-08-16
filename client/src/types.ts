@@ -23,5 +23,9 @@ SOFTWARE.
 */
 
 export interface IAppState {
-  tab: number;
+  systemState: ISystemState;
+}
+
+export interface ISystemState {
+  needsReboot: boolean;
 }

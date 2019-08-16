@@ -23,7 +23,7 @@ SOFTWARE.
 */
 
 export enum ActionType {
-  StateFetchSucceeded
+  StateFetchSucceeded = 'StateFetchSucceeded'
 }
 
 export interface IAction {

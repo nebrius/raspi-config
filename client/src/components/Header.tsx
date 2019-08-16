@@ -22,9 +22,10 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { combineReducers } from 'redux';
-import { systemStateReducer } from './systemState';
+import * as React from 'react';
 
-export const reducers = combineReducers({
-  systemState: systemStateReducer
-});
+export function Header(): JSX.Element {
+  return (
+    <header className="header"><h1>Raspi IO Config</h1></header>
+  );
+}

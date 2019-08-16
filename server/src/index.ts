@@ -28,19 +28,29 @@ import * as fastifyStatic from 'fastify-static';
 
 const PORT = 8080;
 
-const fastify = Fastify({
+const app = Fastify({
   logger: true
 });
 
-fastify.register(fastifyStatic, {
+/*
+Data needed:
+- Needs to be restarted?
+- I2C enabled
+- Serial enabled
+- Current project
+*/
+
+app.get('/api/')
+
+app.register(fastifyStatic, {
   root: join(__dirname, '..', '..', 'public')
 });
 
 (async () => {
   try {
-    await fastify.listen(PORT);
+    await app.listen(PORT);
   } catch (err) {
-    fastify.log.error(err);
+    app.log.error(err);
     process.exit(1);
   }
   console.log('Server running');

@@ -22,9 +22,20 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { combineReducers } from 'redux';
-import { systemStateReducer } from './systemState';
+import { connect } from 'react-redux';
+import { IAction } from '../actions/actions';
+import { IAppState } from '../types';
+import { IRootProps, Root } from '../components/Root';
 
-export const reducers = combineReducers({
-  systemState: systemStateReducer
-});
+function mapStateToProps(state: IAppState): IRootProps {
+  return state.systemState;
+}
+
+function mapDispatchToProps(dispatch: (action: IAction) => any) {
+  return {};
+}
+
+export const RootContainer = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Root);

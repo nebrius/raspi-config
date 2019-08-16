@@ -22,16 +22,17 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
+import 'bootstrap/dist/css/bootstrap.min.css';
 import * as React from 'react';
 import { render } from 'react-dom';
 import { Provider } from 'react-redux';
-import { Root } from './components/Root';
+import { RootContainer } from './containers/RootContainer';
 import { store } from './store';
 
 render(
   (
     <Provider store={store}>
-      <Root />
+      <RootContainer />
     </Provider>
   ),
   document.getElementById('root')
